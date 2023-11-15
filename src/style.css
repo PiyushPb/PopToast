@@ -1,36 +1,26 @@
-/* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 :root {
-  --dark: #34495E;
-  --light: #ffffff;
-  --success: #0ABF30;
-  --error: #E24D4C;
-  --warning: #E9BD0C;
-  --info: #3498DB;
+  --dark-bg: #34495e;
+  --light-bg: #ffffff;
+  --success-bg: #0abf30;
+  --error-bg: #e24d4c;
+  --warning-bg: #e9bd0c;
+  --info-bg: #3498db;
 }
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: var(--dark);
-}
-.notifications {
+
+.notification-container {
   position: fixed;
   top: 30px;
   right: 20px;
 }
-.notifications :where(.toast, .column) {
+
+.notification-container :where(.toast-item, .column) {
   display: flex;
   align-items: center;
 }
-.notifications .toast {
+
+.notification-container .toast-item {
   width: 400px;
   position: relative;
   overflow: hidden;
@@ -38,10 +28,11 @@ body {
   border-radius: 4px;
   padding: 16px 17px;
   margin-bottom: 10px;
-  background: var(--light);
+  background: var(--light-bg);
   justify-content: space-between;
   animation: show_toast 0.3s ease forwards;
 }
+
 @keyframes show_toast {
   0% {
     transform: translateX(100%);
@@ -56,9 +47,11 @@ body {
     transform: translateX(-10px);
   }
 }
-.notifications .toast.hide {
+
+.notification-container .toast-item.hide {
   animation: hide_toast 0.3s ease forwards;
 }
+
 @keyframes hide_toast {
   0% {
     transform: translateX(-10px);
@@ -73,7 +66,8 @@ body {
     transform: translateX(calc(100% + 20px));
   }
 }
-.toast::before {
+
+.toast-item::before {
   position: absolute;
   content: "";
   height: 3px;
@@ -82,69 +76,90 @@ body {
   left: 0px;
   animation: progress 5s linear forwards;
 }
+
 @keyframes progress {
   100% {
     width: 0%;
   }
 }
-.toast.success::before, .btn#success {
-  background: var(--success);
+
+.toast-item.success::before,
+.btn#success {
+  background: var(--success-bg);
 }
-.toast.error::before, .btn#error {
-  background: var(--error);
+
+.toast-item.error::before,
+.btn#error {
+  background: var(--error-bg);
 }
-.toast.warning::before, .btn#warning {
-  background: var(--warning);
+
+.toast-item.warning::before,
+.btn#warning {
+  background: var(--warning-bg);
 }
-.toast.info::before, .btn#info {
-  background: var(--info);
+
+.toast-item.info::before,
+.btn#info {
+  background: var(--info-bg);
 }
-.toast .column i {
+
+.toast-item .column i {
   font-size: 1.75rem;
 }
-.toast.success .column i {
-  color: var(--success);
+
+.toast-item.success .column i {
+  color: var(--success-bg);
 }
-.toast.error .column i {
-  color: var(--error);
+
+.toast-item.error .column i {
+  color: var(--error-bg);
 }
-.toast.warning .column i {
-  color: var(--warning);
+
+.toast-item.warning .column i {
+  color: var(--warning-bg);
 }
-.toast.info .column i {
-  color: var(--info);
+
+.toast-item.info .column i {
+  color: var(--info-bg);
 }
-.toast .column span {
+
+.toast-item .column span {
   font-size: 1.07rem;
   margin-left: 12px;
+  font-family: "Poppins", sans-serif;
 }
-.toast i:last-child {
+
+.toast-item i:last-child {
   color: #aeb0d7;
   cursor: pointer;
 }
-.toast i:last-child:hover {
-  color: var(--dark);
+
+.toast-item i:last-child:hover {
+  color: var(--dark-bg);
 }
+
 .buttons .btn {
   border: none;
   outline: none;
   cursor: pointer;
   margin: 0 5px;
-  color: var(--light);
+  color: var(--light-bg);
   font-size: 1.2rem;
   padding: 10px 20px;
   border-radius: 4px;
 }
 
 @media screen and (max-width: 530px) {
-  .notifications {
+  .notification-container {
     width: 95%;
   }
-  .notifications .toast {
+
+  .notification-container .toast-item {
     width: 100%;
     font-size: 1rem;
     margin-left: 20px;
   }
+
   .buttons .btn {
     margin: 0 1px;
     font-size: 1.1rem;
