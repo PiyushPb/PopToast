@@ -7,6 +7,11 @@ PopToast is a lightweight JavaScript library for creating customizable and styli
 Include the following links in your HTML file:
 
 ```html
+<!-- Add this ul tag in yout body to show the notification -->
+<ul class="notification-container"></ul>
+```
+
+```html
 <!-- Add the PopToast styling to head -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PiyushPb/PopToast/src/style.css" />
 ```
@@ -52,7 +57,7 @@ Here's an example of how to use PopToast:
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PiyushPb/PopToast/src/style.css" />
 </head>
 <body>
-
+  <ul class="notification-container"></ul>
   <!-- Add the PopToast script -->
   <script src="https://cdn.jsdelivr.net/gh/PiyushPb/PopToast/src/index.js"></script>
 
