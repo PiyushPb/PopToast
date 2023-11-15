@@ -25,7 +25,43 @@ To display a toast notification, call the popToast function:
 ```javascript
 popToast("This is a toast message!", "info");
 ```
+
+### Here are the available toasts :
+1. Success toast
+```javascript
+popToast("This is a success toast message!", "success");
+```
+
 Output:
+
+![](/assets/success-toast.png)
+
+2. error toast
+```javascript
+popToast("This is a error toast message!", "error");
+```
+
+Output:
+
+![](/assets/error-toast.png)
+
+3. info toast
+```javascript
+popToast("This is a info toast message!", "info");
+```
+
+Output:
+
+![](/assets/info-toast.png)
+
+4. warning toast
+```javascript
+popToast("This is a warning toast message!", "warning");
+```
+
+Output:
+
+![](/assets/warning-toast.png)
 
 You can customize the message and choose from different types of toasts: success, error, warning, and info.
 
